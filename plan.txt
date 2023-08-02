@@ -1,0 +1,14 @@
+diary:
+    - entries: list
+    - select entry based on time and reading speed
+    - todo list
+    - contact numbers
+
+diary_entry:
+    - create an entry
+    - total words
+    - scan for contact numbers
+
+todo_entry:
+    - create todo
+    - mark complete
