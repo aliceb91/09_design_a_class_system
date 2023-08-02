@@ -12,6 +12,8 @@ class DiaryEntry():
         #   title: The title of the diary entry as a string.
         #   contents: The contents of the diary entry as a string.
         #   contact_numbers: Any valid contact numbers found in the diary entry as a list of strings.
+        if not isinstance(title, str) or not isinstance(contents, str):
+            raise Exception("Please use strings for DiaryEntry arguments")
         self.title = title
         self.contents = contents
         self.contact_numbers = self.__detect_contact_numbers()

@@ -1,4 +1,5 @@
 from lib.diary_entry import DiaryEntry
+import pytest
 
 def test_create_diary_entry():
     # Given an entry title and contents
@@ -34,3 +35,27 @@ def test_contact_number_list_output():
     entry = DiaryEntry("Hello", "07123456789 07987654321 01202345678")
     result = entry.return_contact_numbers()
     assert result == ["07123456789", "07987654321", "01202345678"]
+
+def test_inputs_are_strings():
+    # Given a diary entry
+    # Raises an exception when strings are not used for the arguments of DiaryEntry.
+    with pytest.raises(Exception) as e:
+        entry = DiaryEntry(True, 7)
+    error_message = str(e.value)
+    assert error_message == "Please use strings for DiaryEntry arguments"
+
+def test_title_is_string():
+    # Given a diary entry
+    # Raises an exception if only the title is not a string.
+    with pytest.raises(Exception) as e:
+        entry = DiaryEntry(True, "Hello")
+    error_message = str(e.value)
+    assert error_message == "Please use strings for DiaryEntry arguments"
+
+def test_contents_is_string():
+    # Given a diary entry
+    # Raises an exception if only the contents is not a string.
+    with pytest.raises(Exception) as e:
+        entry = DiaryEntry(True, "Hello")
+    error_message = str(e.value)
+    assert error_message == "Please use strings for DiaryEntry arguments"

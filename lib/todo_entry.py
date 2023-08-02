@@ -8,6 +8,8 @@ class TodoEntry():
         # Variables:
         #   task: The task stored as a string.
         #   complete: The current completion status of the task.
+        if not isinstance(task, str):
+            raise Exception("Please use a string for TodoEntry argument")
         self.task = task
         self.complete = False
 
